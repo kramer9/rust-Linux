@@ -3,7 +3,7 @@
 use std::fs;
 
 fn main() {
-    let file_path = "/home/argus/Drives/2TBa/Projects/rust-Linux/aoc/2015/d1/src/input.txt";
+    let file_path: &str = "/home/argus/Drives/2TBa/Projects/rust-Linux/aoc/2015/d1/src/input.txt";
     // --snip--
     println!("In file {}", file_path);
 
