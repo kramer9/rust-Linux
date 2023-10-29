@@ -43,7 +43,7 @@ fn main() {
                 let sa: i32 = ((2*l*w) + (2*w*h) + (2*h*l));
                 let min: i32 = std::cmp::min((l*w), (w*h)); //note dont use the *2 the *2 is for TWO sides, you want the SA for a single single
                 let min: i32 = std::cmp::min(min, (h*l));
-                rt = rt + sa + min;  //key point !!! notice this is not a let
+                rt = rt + sa + min;  //key point !!! notice this is not a let, the use of let resets it to zero every time
  //               println!("The minimum {}", min);
                 println!("length {} width {} height {} sa {} rt {}", l, w, h, sa, rt);
  //               remember 3 variable above are toast post loop
