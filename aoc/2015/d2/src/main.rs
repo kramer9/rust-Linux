@@ -3,6 +3,11 @@
 
 /*
 1 (read in input) - They have a list of the dimensions (length l, width w, and height h) of each present
+2 - break apart l/w/h
+3 - find the surface area of the box, which is 2*l*w + 2*w*h + 2*h*l
+4 - find the area of the smallest side
+5 - add it to 3
+6 - total square feet of wrapping paper
 ? - 
 */
 
@@ -16,6 +21,7 @@ fn main() {
     let mut l: i32 = 0b0;
     let mut w: i32 = 0b0;
     let mut h: i32 = 0b0;
+    let mut rt: i32 = 0b0; //have to initialize rt up here, cuz you add it on itself within the loop
 
     println!("In file {}", file_path);
 
@@ -34,11 +40,18 @@ fn main() {
                 let l: i32 = split_dimension[0];
                 let w: i32 = split_dimension[1];
                 let h: i32 = split_dimension[2];
-                println!("length {} width {} height {}", l, w, h);
+                let sa: i32 = ((2*l*w) + (2*w*h) + (2*h*l));
+                let min: i32 = std::cmp::min((l*w), (w*h)); //note dont use the *2 the *2 is for TWO sides, you want the SA for a single single
+                let min: i32 = std::cmp::min(min, (h*l));
+                rt = rt + sa + min;  //key point !!! notice this is not a let
+ //               println!("The minimum {}", min);
+                println!("length {} width {} height {} sa {} rt {}", l, w, h, sa, rt);
  //               remember 3 variable above are toast post loop
             }
         }
     }
+   
+    println!("final total {}", rt);
 }
 
 // The output is wrapped in a Result to allow matching on errors
