@@ -44,6 +44,7 @@ fn main() {
                 let min: i32 = std::cmp::min((l*w), (w*h)); //note dont use the *2 the *2 is for TWO sides, you want the SA for a single single
                 let min: i32 = std::cmp::min(min, (h*l));
                 rt = rt + sa + min;  //key point !!! notice this is not a let, the use of let resets it to zero every time
+                //|\ The primary use for the let keyword is in let statements, which are used to introduce a new set of variables into the current scope, as given by a pattern.
  //               println!("The minimum {}", min);
                 println!("length {} width {} height {} sa {} rt {}", l, w, h, sa, rt);
  //               remember 3 variable above are toast post loop
