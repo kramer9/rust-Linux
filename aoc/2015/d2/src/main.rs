@@ -17,7 +17,8 @@ use std::path::Path;
 
 fn main() {
     //hardcoding the variable rather then accepting it via command line
-    let file_path: &str = "/home/argus/Drives/2TBa/Projects/rust-Linux/aoc/2015/d2/src/inputp1.txt";
+ //   let file_path: &str = "/home/argus/Drives/2TBa/Projects/rust-Linux/aoc/2015/d2/src/inputp1.txt";
+    let file_path: &str = "p:/Projects/rust-Linux/aoc/2015/d2/src/inputp1.txt";
     let mut l: i32 = 0b0;
     let mut w: i32 = 0b0;
     let mut h: i32 = 0b0;
