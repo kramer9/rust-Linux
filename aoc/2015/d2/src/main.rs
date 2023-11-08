@@ -17,17 +17,21 @@ part 2
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
+use std::{env, fs};
 
 fn main() {
     //hardcoding the variable rather then accepting it via command line
-    let file_path: &str = "/home/argus/Drives/2TBa/Projects/rust-Linux/aoc/2015/d2/src/inputp1.txt";
- //   let file_path: &str = "p:/Projects/rust-Linux/aoc/2015/d2/src/inputp1.txt";
+//    let file_path: &str = "/home/argus/Drives/2TBa/Projects/rust-Linux/aoc/2015/d2/src/inputp1.txt";
     let mut l: i32 = 0b0;
     let mut w: i32 = 0b0;
     let mut h: i32 = 0b0;
     let mut rt: i32 = 0b0; //have to initialize rt up here, cuz you add it on itself within the loop
     let mut rt_ribbon: i32 = 0b0; //have to initialize rt up here, cuz you add it on itself within the loop
+    let current_dir = env::current_dir().unwrap();
+    println!("{}", current_dir.display()); //https://doc.rust-lang.org/std/path/struct.Path.html#method.display
 
+    let file_path: String = format!("{}/src/inputp1.txt", current_dir.display());
+    //let file_path: &str = "{current_dir}/src/inputp1.txt";
     println!("In file {}", file_path);
 
 // need to understand it - https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html
@@ -54,7 +58,7 @@ fn main() {
 
                 let mut array = [l, w, h]; //https://rosettacode.org/wiki/Sort_three_variables#Rust
                 array.sort(); //remember its variable.function (sort is a built in function that we are passing variable into)
- //               println!("original: {}", dimension);
+                println!("original: {}", dimension);
  //               println!("Sorted: {:?}", array);
  //               println!("Smallest: {} Medium: {}", array[0], array[1]);
                 rt_ribbon = rt_ribbon + ((array[0]*2) + (array[1] * 2) + (l * w * h));
