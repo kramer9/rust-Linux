@@ -17,7 +17,7 @@ part 2
 use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
-use std::{env, fs};
+use std::{env, fs}; //need to import this to support querying for the path where we are running
 
 fn main() {
     //hardcoding the variable rather then accepting it via command line
@@ -27,6 +27,7 @@ fn main() {
     let mut h: i32 = 0b0;
     let mut rt: i32 = 0b0; //have to initialize rt up here, cuz you add it on itself within the loop
     let mut rt_ribbon: i32 = 0b0; //have to initialize rt up here, cuz you add it on itself within the loop
+
     let current_dir = env::current_dir().unwrap();
     println!("{}", current_dir.display()); //https://doc.rust-lang.org/std/path/struct.Path.html#method.display
 
@@ -58,7 +59,7 @@ fn main() {
 
                 let mut array = [l, w, h]; //https://rosettacode.org/wiki/Sort_three_variables#Rust
                 array.sort(); //remember its variable.function (sort is a built in function that we are passing variable into)
-                println!("original: {}", dimension);
+ //               println!("original: {}", dimension);
  //               println!("Sorted: {:?}", array);
  //               println!("Smallest: {} Medium: {}", array[0], array[1]);
                 rt_ribbon = rt_ribbon + ((array[0]*2) + (array[1] * 2) + (l * w * h));
