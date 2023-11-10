@@ -29,6 +29,8 @@ fn main() {
 
    if let Ok(input) = read_lines(input_file) {
         // Consumes the iterator, returns an (Optional) String
+        // key points, input is NOT the entire input file in memory, its a pointer
+        // lines reads in the first who line into a string
         for lines in input {
             if let Ok(line) = lines { //pull the first line in the list
 //                println!("{}",line);
