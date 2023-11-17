@@ -1,10 +1,12 @@
+#![allow(clippy::manual_flatten)]
+#[allow(unused_imports)] //turns off the clippy warning about unused imports
 // https://adventofcode.com/2015/day/3
 
 /*
 1 (read in input) - its one big long line
 */
 
-#[allow(unused_imports)] //turns off the clippy warning about unused imports
+
 
 use std::{env, fs}; //need to import this to support querying for the path where we are running
 use std::path::Path; //need for the read_lines function
