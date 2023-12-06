@@ -37,7 +37,7 @@ fn main() {
             if let Ok(line) = lines { //pull the first line in the list
 //                println!("{}",line);
                 for c in line.chars() { //iterate through the chars in the line
-                    println!("{}",c);
+                    println!("d {}",c);
                 }
             }
         }
