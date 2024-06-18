@@ -6,7 +6,9 @@
 1 (read in input) - its one big long line
 */
 
-
+fn calculate_sum(a: i32, b: i32) -> i32 {
+    a + b
+}
 
 use std::{env, fs}; //need to import this to support querying for the path where we are running
 use std::path::Path; //need for the read_lines function
@@ -29,7 +31,7 @@ fn main() {
     let input_file: String = format!("{}/src/inputp1.txt", current_dir.display()); //set the input file location, using current dir to support work from different platforms
     println!("In file {}", input_file);
 
-   if let Ok(input) = read_lines(input_file) {
+if let Ok(input) = read_lines(input_file) {
         // Consumes the iterator, returns an (Optional) String
         // key points, input is NOT the entire input file in memory, its a pointer
         // lines reads in the first who line into a string
